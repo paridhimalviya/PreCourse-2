@@ -7,13 +7,22 @@
 
 /*
  prerequisites -  the array must be sorted.
- access to any element in the data structure should take constant time.
  2 approaches - iterative bonary search algorithm, recursive binary search algorithm
  complexity to search for an element - O(log n)
 */
 
 class BinarySearch {
     
+    init() {
+        let sortedArray = [2, 5, 8, 12, 16, 23, 38, 56, 71, 91]
+        let targetValue = 23
+        if let index = binarySearch(for: targetValue, in: sortedArray) {
+            print("element \(targetValue) found at index \(index)")
+        } else {
+            print("Element \(targetValue) not found in the array")
+        }
+    }
+
     func binarySearch(for target: Int, in array: [Int]) -> Int? {
         var left = 0
         var right = array.count - 1
@@ -29,16 +38,6 @@ class BinarySearch {
             }
         }
         return -1 //Target not found
-    }
-    
-    init() {
-        let sortedArray = [2, 5, 8, 12, 16, 23, 38, 56, 71, 91]
-        let targetValue = 23
-        if let index = binarySearch(for: targetValue, in: sortedArray) {
-            print("element \(targetValue) found at index \(index)")
-        } else {
-            print("Element \(targetValue) not found in the array")
-        }
     }
     
     func recursiveBinarySearch(for target: Int, in array: [Int], left: Int = 0, right: Int?) -> Int? {

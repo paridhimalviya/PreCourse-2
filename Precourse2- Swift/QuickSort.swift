@@ -16,14 +16,6 @@ class QuickSort {
 extension QuickSort {
     
     //Based on a condition, if we need to partition an array in 2 subsets then this can be used.
-    /*
-     popular questions related to this:
-      1. odd even numbers separation
-     2. separate elements <=  pivot and elements > pivot
-     3. separate 0s and non 0s
-     4. separate 0s and 1s
-     */
-    
     func quickSort(array: inout [Int], low: Int, high: Int) {
         
         if (low >= high) {
@@ -57,32 +49,6 @@ extension QuickSort {
             }
         }
         return (j - 1) //pivot index
-    }
-
-    func partitionAnArrayWithPivot() {
-        //Partiiotn an array with a pivot element so that the less than or equal to elements are towards the left side and greater elements are at the right side of the pivot element.
-        var inputArray = [7, 9, 4, 8, 3, 6, 2, 1]
-        let pivot = 5
-        
-        /*
-         3 regions
-         i to end -> unknown elements
-         0 to (j - 1) -> elements <= pivot
-         (j) to (i - 1) -> elements > pivot
-         */
-        var i = 0
-        var j = 0
-        while (i < inputArray.count) {
-            if (inputArray[i] > pivot) {
-                i += 1
-            } else if (inputArray[i] <= pivot) {
-                swap(array: &inputArray, i: i, j: j)
-                i += 1
-                j += 1
-            }
-        }
-        print("updated array \(inputArray)")
-        let _  = partition(input: &inputArray, pivot: 6, low: 0, high: 7)
     }
     
     func swap(array: inout [Int], i: Int, j: Int) {

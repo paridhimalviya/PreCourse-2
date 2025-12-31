@@ -9,7 +9,6 @@ class MergeSort {
     
     init() {
         let a = [1, 2, 14, 23, 5, 80, 10]
-//        let b = [2, 4, 6, 8, 10]
         let result = sortUsingMergeSort(inputArray: a, low: 0, high: a.count - 1)
         print("result is \(result) using merge sort")
     }
